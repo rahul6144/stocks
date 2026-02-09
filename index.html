@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-200 font-sans min-h-screen flex flex-col">
+    <!-- Top Header Section -->
+    <header class="bg-white text-gray-800 py-3 fixed top-0 w-full z-20">
+      <div class="container mx-auto px-4 flex items-center justify-between">
+        <h1 class="text-2xl font-bold">Rahul</h1>
+        <div class="flex-1 mx-4 max-w-md">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="w-full py-1 px-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600 border-2 border-gray-100"
+          />
+        </div>
+        <div id="profile-container" class="relative">
+          <img
+            id="profile-logo"
+            src="https://via.placeholder.com/40"
+            alt="Profile Logo"
+            class="w-10 h-10 rounded-full cursor-pointer border-2 border-gray-300"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Profile Hamburger Menu -->
+    <div
+      id="hamburger-menu"
+      class="hidden fixed top-0 left-0 w-full h-full bg-gray-50 z-30 flex flex-col overflow-y-auto box-border pt-16"
+    >
+      <div
+        class="bg-gray-50 text-gray-800 py-3 px-4 flex justify-between items-center fixed top-0 w-full z-30"
+      >
+        <h2 class="text-xl font-bold">Profile</h2>
+        <button id="close-menu" class="text-2xl font-bold">×</button>
+      </div>
+      <!-- Profile Box -->
+      <div class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0">
+        <div class="flex items-center">
+          <img
+            src="https://via.placeholder.com/100"
+            alt="Profile Photo"
+            class="w-24 h-24 rounded-full mr-4"
+          />
+          <div class="flex flex-col">
+            <h3 class="text-xl font-bold uppercase">Rahul Sharma</h3>
+            <p class="text-sm text-gray-600">client id: R90584520</p>
+          </div>
+        </div>
+      </div>
+      <!-- Combined Box (Personal Details, Active Segments, Demat Details, My Reports) -->
+      <div class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0">
+        <div class="flex flex-col gap-4">
+          <!-- Row 1: Personal Details + Active Segments -->
+          <div class="flex items-center gap-4">
+            <div class="flex-1 flex items-center">
+              <svg
+                class="w-6 h-6 text-gray-600 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                ></path>
+              </svg>
+              <div>
+                <p class="text-gray-800 text-base font-medium">
+                  Personal Details
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex items-center">
+              <svg
+                class="w-6 h-6 text-gray-600 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2V9"
+                ></path>
+              </svg>
+              <div>
+                <p class="text-gray-800 text-base font-medium">
+                  Active Segments
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Row 2: Demat Details + My Reports -->
+          <div class="flex items-center gap-4">
+            <div class="flex-1 flex items-center">
+              <svg
+                class="w-6 h-6 text-gray-600 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                ></path>
+              </svg>
+              <div>
+                <p class="text-gray-800 text-base font-medium">Demat Details</p>
+              </div>
+            </div>
+            <div class="flex-1 flex items-center">
+              <svg
+                class="w-6 h-6 text-gray-600 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+              <div>
+                <p class="text-gray-800 text-base font-medium">My Reports</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Manage Accounts Box -->
+      <div
+        class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer"
+        onclick="toggleManageAccountsSubboxes(); handleBoxClick('Manage Accounts')"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-gray-800 text-base font-medium">Manage Accounts</p>
+            <p class="text-sm text-gray-600">DDDPI Status, MTF,...</p>
+          </div>
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Manage Accounts Sub-boxes -->
+      <div id="manage-accounts-subboxes" class="hidden">
+        <div
+          class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer ml-4"
+          onclick="handleBoxClick('Bank Account')"
+        >
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-gray-800 text-base font-medium">Bank Account</p>
+              <p class="text-sm text-gray-600">Add or edit Bank Details</p>
+            </div>
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer ml-4"
+          onclick="handleBoxClick('DDPI Status')"
+        >
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-gray-800 text-base font-medium">DDPI Status</p>
+              <p class="text-sm text-gray-600">DDPI Status</p>
+            </div>
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer ml-4"
+          onclick="handleBoxClick('MTF Details')"
+        >
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-gray-800 text-base font-medium">MTF Details</p>
+              <p class="text-sm text-gray-600">
+                View margin trading facility details
+              </p>
+            </div>
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer ml-4"
+          onclick="handleBoxClick('Transfer Stocks')"
+        >
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-gray-800 text-base font-medium">Transfer Stocks</p>
+              <p class="text-sm text-gray-600">
+                Transfer Stocks to any Demat Account
+              </p>
+            </div>
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer ml-4"
+          onclick="handleBoxClick('Temporary Account Freeze')"
+        >
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-gray-800 text-base font-medium">
+                Temporary Account Freeze
+              </p>
+              <p class="text-sm text-gray-600">
+                Temporary Block Trading/Investing
+              </p>
+            </div>
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer ml-4"
+          onclick="handleBoxClick('Close Account')"
+        >
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-gray-800 text-base font-medium">Close Account</p>
+              <p class="text-sm text-gray-600">
+                Close Your Account permanently
+              </p>
+            </div>
+            <svg
+              class="w-6 h-6 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Track Requests Box -->
+      <div
+        class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer"
+        onclick="handleBoxClick('Track Requests')"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-gray-800 text-base font-medium">Track Requests</p>
+            <p class="text-sm text-gray-600">
+              view active and Closed Profile Modification Requests
+            </p>
+          </div>
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!-- KYC Document Box -->
+      <div
+        class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer"
+        onclick="handleBoxClick('KYC Document')"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-gray-800 text-base font-medium">KYC Document</p>
+            <p class="text-sm text-gray-600">
+              Signed Documents After Successful KYC Completion
+            </p>
+          </div>
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Brokerage Charges Box -->
+      <div
+        class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer"
+        onclick="handleBoxClick('Brokerage Charges')"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-gray-800 text-base font-medium">Brokerage Charges</p>
+            <p class="text-sm text-gray-600">View Charges</p>
+          </div>
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Transaction History Box -->
+      <div
+        class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer"
+        onclick="handleBoxClick('Transaction History')"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-gray-800 text-base font-medium">
+              Transaction History
+            </p>
+            <p class="text-sm text-gray-600">
+              Content for Transaction History (e.g., recent trades).
+            </p>
+          </div>
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Notifications Box -->
+      <div
+        class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer"
+        onclick="handleBoxClick('Notifications')"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-gray-800 text-base font-medium">Notifications</p>
+            <p class="text-sm text-gray-600">
+              Content for Notifications (e.g., alerts, updates).
+            </p>
+          </div>
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Log Out of Device Box -->
+      <div
+        class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0 cursor-pointer"
+        onclick="handleBoxClick('Log Out of Device')"
+      >
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-gray-800 text-base font-medium">Log Out of Device</p>
+          </div>
+          <svg
+            class="w-6 h-6 text-gray-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Hamburger Menu (Watchlist, F&O, Portfolio, Trade, Account) -->
+    <div
+      id="nav-hamburger-menu"
+      class="hidden fixed top-0 left-0 w-full h-full bg-white z-15 flex flex-col overflow-y-auto box-border pt-12 pb-16"
+    >
+      <div
+        class="bg-blue-400 text-white py-3 px-4 flex justify-between items-center fixed top-0 w-full z-20"
+      >
+        <h2 id="nav-menu-title" class="text-xl font-bold">Menu</h2>
+        <button id="close-nav-menu" class="text-2xl font-bold">×</button>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg p-4 mt-4 w-full mx-0">
+        <div class="flex flex-col">
+          <p
+            id="nav-menu-content-title"
+            class="text-gray-800 text-base font-medium"
+          >
+            Content
+          </p>
+          <p id="nav-menu-content-text" class="text-sm text-gray-600">
+            Placeholder content for the selected navigation item.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Header Section -->
+    <nav class="bg-white py-3 fixed top-12 w-full z-10">
+      <div class="container mx-auto px-4">
+        <div class="flex">
+          <div class="w-1/4 text-center">
+            <a
+              href="#"
+              class="nav-link text-blue-600 underline font-medium"
+              onclick="setActiveNavLink(this, 'Stocks'); resetToStocksPage()"
+              >Stocks</a
+            >
+          </div>
+          <div class="w-1/4 text-center">
+            <a
+              href="#"
+              class="nav-link text-gray-800 hover:text-blue-600 font-medium"
+              onclick="setActiveNavLink(this, 'Mutual Funds'); openSecondaryNavHamburgerMenu('Mutual Funds')"
+              >Mutual Funds</a
+            >
+          </div>
+          <div class="w-1/4 text-center">
+            <a
+              href="#"
+              class="nav-link text-gray-800 hover:text-blue-600 font-medium"
+              onclick="setActiveNavLink(this, 'Insurance'); openSecondaryNavHamburgerMenu('Insurance')"
+              >Insurance</a
+            >
+          </div>
+          <div class="w-1/4 text-center">
+            <a
+              href="#"
+              class="nav-link text-gray-800 hover:text-blue-600 font-medium"
+              onclick="setActiveNavLink(this, 'IPO'); openSecondaryNavHamburgerMenu('IPO')"
+              >IPO</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div id="main-content" class="pt-24 pb-16 flex-grow">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:space-x-4">
+          <!-- Market Indices Box -->
+          <div
+            class="bg-white shadow rounded-lg p-4 mt-4 h-auto flex flex-col md:w-2/3"
+          >
+            <div class="flex w-full mb-4">
+              <div class="w-1/4 text-center">
+                <a
+                  href="#"
+                  class="market-link text-blue-600 underline font-medium"
+                  onclick="setActiveLink(this, 'India')"
+                  >India</a
+                >
+              </div>
+              <div class="w-1/4 text-center">
+                <a
+                  href="#"
+                  class="market-link text-gray-800 hover:text-blue-600 font-medium"
+                  onclick="setActiveLink(this, 'USA')"
+                  >USA</a
+                >
+              </div>
+              <div class="w-1/4 text-center">
+                <a
+                  href="#"
+                  class="market-link text-gray-800 hover:text-blue-600 font-medium"
+                  onclick="setActiveLink(this, 'Europe')"
+                  >Europe</a
+                >
+              </div>
+              <div class="w-1/4 text-center">
+                <a
+                  href="#"
+                  class="market-link text-gray-800 hover:text-blue-600 font-medium"
+                  onclick="setActiveLink(this, 'Asia')"
+                  >Asia</a
+                >
+              </div>
+            </div>
+            <div
+              id="carousel"
+              class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+            >
+              <div
+                class="flex-none w-48 bg-white shadow-lg rounded-lg p-4 mx-2 snap-start border border-gray-200"
+              >
+                <p class="text-gray-800 text-base font-medium">Market 1</p>
+              </div>
+              <div
+                class="flex-none w-48 bg-white shadow-lg rounded-lg p-4 mx-2 snap-start border border-gray-200"
+              >
+                <p class="text-gray-800 text-base font-medium">Market 2</p>
+              </div>
+            </div>
+          </div>
+          <!-- Top Movers Box -->
+          <div
+            class="bg-white shadow rounded-lg p-4 mt-4 h-auto flex flex-col md:w-1/3"
+          >
+            <div class="flex justify-between items-center mb-2">
+              <h2 class="text-gray-800 text-lg font-bold">Top Movers</h2>
+              <div class="flex space-x-2">
+                <button
+                  id="gainers-btn"
+                  class="px-3 py-1 bg-blue-600 text-white rounded-md text-sm font-medium"
+                  onclick="toggleMovers('gainers')"
+                >
+                  Gainers
+                </button>
+                <button
+                  id="losers-btn"
+                  class="px-3 py-1 bg-gray-200 text-gray-800 rounded-md text-sm font-medium"
+                  onclick="toggleMovers('losers')"
+                >
+                  Losers
+                </button>
+              </div>
+            </div>
+            <div class="flex space-x-2 mb-4">
+              <button
+                id="large-cap-btn"
+                class="flex-1 px-3 py-1 bg-blue-600 text-white rounded-md text-sm font-medium text-center"
+                onclick="toggleCap('large-cap')"
+              >
+                Large Cap
+              </button>
+              <button
+                id="mid-cap-btn"
+                class="flex-1 px-3 py-1 bg-gray-200 text-gray-800 rounded-md text-sm font-medium text-center"
+                onclick="toggleCap('mid-cap')"
+              >
+                Mid Cap
+              </button>
+              <button
+                id="small-cap-btn"
+                class="flex-1 px-3 py-1 bg-gray-200 text-gray-800 rounded-md text-sm font-medium text-center"
+                onclick="toggleCap('small-cap')"
+              >
+                Small Cap
+              </button>
+            </div>
+            <div
+              id="movers-carousel"
+              class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide mb-2"
+            >
+              <div
+                class="flex-none w-32 bg-white shadow-lg rounded-lg p-3 mx-1 snap-start border border-gray-200"
+              >
+                <p class="text-gray-800 text-sm font-medium">Index 1</p>
+              </div>
+              <div
+                class="flex-none w-32 bg-white shadow-lg rounded-lg p-3 mx-1 snap-start border border-gray-200"
+              >
+                <p class="text-gray-800 text-sm font-medium">Index 2</p>
+              </div>
+              <div
+                class="flex-none w-32 bg-white shadow-lg rounded-lg p-3 mx-1 snap-start border border-gray-200"
+              >
+                <p class="text-gray-800 text-sm font-medium">Index 3</p>
+              </div>
+              <div
+                class="flex-none w-32 bg-white shadow-lg rounded-lg p-3 mx-1 snap-start border border-gray-200"
+              >
+                <p class="text-gray-800 text-sm font-medium">Index 4</p>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <a href="#" class="text-blue-600 text-sm font-medium">VIEW ALL</a>
+            </div>
+          </div>
+        </div>
+        <!-- Stock Closing Prices -->
+        <div class="flex space-x-2 mt-4">
+          <div
+            class="flex-none w-1/4 bg-white shadow-lg rounded-lg p-2 border border-gray-200"
+          >
+            <p class="text-gray-800 text-xs font-medium text-center">
+              RELIANCE
+            </p>
+            <p class="text-gray-800 text-xs text-center">₹3012.50</p>
+          </div>
+          <div
+            class="flex-none w-1/4 bg-white shadow-lg rounded-lg p-2 border border-gray-200"
+          >
+            <p class="text-gray-800 text-xs font-medium text-center">TCS</p>
+            <p class="text-gray-800 text-xs text-center">₹4215.30</p>
+          </div>
+          <div
+            class="flex-none w-1/4 bg-white shadow-lg rounded-lg p-2 border border-gray-200"
+          >
+            <p class="text-gray-800 text-xs font-medium text-center">
+              HDFCBANK
+            </p>
+            <p class="text-gray-800 text-xs text-center">₹1650.75</p>
+          </div>
+          <div
+            class="flex-none w-1/4 bg-white shadow-lg rounded-lg p-2 border border-gray-200"
+          >
+            <p class="text-gray-800 text-xs font-medium text-center">INFY</p>
+            <p class="text-gray-800 text-xs text-center">₹1820.20</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Footer -->
+    <footer
+      class="bg-white text-gray-800 py-3 fixed bottom-0 w-full z-10 border-t border-gray-300"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex justify-around items-center">
+          <a
+            onclick="resetToHomePage()"
+            class="flex flex-col items-center text-sm cursor-pointer"
+          >
+            <svg
+              class="w-6 h-6 mb-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7m-7 7v6h-4v-6m4 0l-7-7"
+              ></path>
+            </svg>
+            Home
+          </a>
+          <a
+            onclick="openNavHamburgerMenu('Watchlist')"
+            class="flex flex-col items-center text-sm cursor-pointer"
+          >
+            <svg
+              class="w-6 h-6 mb-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+              ></path>
+            </svg>
+            Watchlist
+          </a>
+          <a
+            onclick="openNavHamburgerMenu('F&O')"
+            class="flex flex-col items-center text-sm cursor-pointer"
+          >
+            <svg
+              class="w-6 h-6 mb-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            F&O
+          </a>
+          <a
+            onclick="openNavHamburgerMenu('Portfolio')"
+            class="flex flex-col items-center text-sm cursor-pointer"
+          >
+            <svg
+              class="w-6 h-6 mb-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2V9"
+              ></path>
+            </svg>
+            Portfolio
+          </a>
+          <a
+            onclick="openNavHamburgerMenu('Trade')"
+            class="flex flex-col items-center text-sm cursor-pointer"
+          >
+            <svg
+              class="w-6 h-6 mb-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+              ></path>
+            </svg>
+            Trade
+          </a>
+          <a
+            onclick="openNavHamburgerMenu('Account')"
+            class="flex flex-col items-center text-sm cursor-pointer"
+          >
+            <svg
+              class="w-6 h-6 mb-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              ></path>
+            </svg>
+            Account
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
